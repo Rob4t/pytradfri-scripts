@@ -113,7 +113,7 @@ if bulb_state:
 else:
     target_mood_name = args.mood_off
 
-available_moods = api(gateway.get_group_moods(target_group.id))
+available_moods = api(target_group.moods())
 
 for mood in available_moods:
     data = api(mood)

@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 """
-You can set moods via this script
+You can set moods via this script.
+
+Example usage via cron:
+
+    # sets a "cold" mood for group "bathroom". determines group state via bulb "light"
+    # when state is "True" the mood "FOCUS" will be set. when state is "False"
+    # the mood "FOCUS OFF" is set (which does not turn on the light)
+    0 6 * * 1-5 /root/change_mood.py 192.168.178.45 bathroom light FOCUS "FOCUS OFF"
+
 """
 
 # Hack to allow relative import above top level package
